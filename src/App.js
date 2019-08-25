@@ -28,13 +28,12 @@ const App = () => {
     const fetchPosts = async () => {
       setLoading(true);
       const res = await axios.get(`https://api.github.com/search/repositories?q=${searchQuery}`);
-      console.log('res', res.data.items);
       setPosts(res.data.items);
       setLoading(false);
     };
 
     fetchPosts();
-  },[]);
+  },[viewPort]);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -46,6 +45,7 @@ const App = () => {
 
   const searchData = async () =>{
     setLoading(true);
+    setCurrentPage(1);
     const res = await axios.get(`https://api.github.com/search/repositories?q=${searchQuery}`);
     setPosts(res.data.items);
       setLoading(false);

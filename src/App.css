@@ -40,6 +40,16 @@ img{
   color: white;
 }
 
+.cardData{
+ text-decoration: none;
+ color: black;
+}
+
+.cardData:hover{
+  text-decoration: none;
+  color: black;
+ }
+ 
 .App-link {
   color: #61dafb;
 }
